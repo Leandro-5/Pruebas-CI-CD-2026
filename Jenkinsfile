@@ -5,9 +5,9 @@ pipeline {
 
   stages {
     stage('Checkout')         { steps { checkout scm } }
-    stage('Install deps')     { steps { bat 'npm ci' } }
-    stage('Install browsers') { steps { bat 'npx playwright install' } }
-    stage('Run tests')        { steps { bat 'npx playwright test --reporter=html,line,junit' } }
+    stage('Install deps')     { steps { sh 'npm ci' } }
+    stage('Install browsers') { steps { sh 'npx playwright install' } }
+    stage('Run tests')        { steps { sh 'npx playwright test --reporter=html,line,junit' } }
   }
 
   post {
