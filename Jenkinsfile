@@ -24,7 +24,7 @@ pipeline {
       ])
 
       junit allowEmptyResults: true,
-            testResults      : 'test-results/*.xml'
+            testResults      : 'test-results/results.xml'
     }
   }
 }
